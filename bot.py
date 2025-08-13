@@ -1,27 +1,11 @@
 import telebot
 import requests
 import re
-from flask import Flask
-from threading import Thread
 
 # ================== إعدادات البوت ==================
-TOKEN = "8393532186:AAHZbpgZ0OVrBBmJb4pjRzdNc1CiD6IXPiQ"  # توكنك مباشرة
+TOKEN = "2085927183:AAFCQpUZUuNn-LU6xAM3gMRfthR3csn4Ae8"  # توكنك مباشرة
 OWNER_ID = 123456789      # ضع الـ ID الخاص بك
 bot = telebot.TeleBot(TOKEN, threaded=True, num_threads=10)
-
-# ================== Flask لإبقاء البوت شغال ==================
-app = Flask('')
-
-@app.route('/')
-def home():
-    return "Bot is alive!"
-
-def run():
-    app.run(host='0.0.0.0', port=8080)
-
-def keep_alive():
-    t = Thread(target=run)
-    t.start()
 
 # ================== دالة الحصول على ID ==================
 def get_user_id_by_username(username):
@@ -86,5 +70,4 @@ def get_date(message):
         bot.edit_message_text(f"❌ خطأ: {e}", message.chat.id, sent_msg.message_id)
 
 # ================== تشغيل البوت ==================
-keep_alive()  # إبقاء البوت شغال
 bot.polling(non_stop=True)
