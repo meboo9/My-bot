@@ -3,7 +3,7 @@ import requests
 import re
 
 # ================== إعدادات البوت ==================
-TOKEN = "2085927183:AAFCQpUZUuNn-LU6xAM3gMRfthR3csn4Ae8"  # توكنك مباشرة
+TOKEN = "8393532186:AAHZbpgZ0OVrBBmJb4pjRzdNc1CiD6IXPiQ"  # توكنك مباشرة
 OWNER_ID = 123456789      # ضع الـ ID الخاص بك
 bot = telebot.TeleBot(TOKEN, threaded=True, num_threads=10)
 
